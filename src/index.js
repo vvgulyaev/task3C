@@ -37,15 +37,8 @@ function getOutputIndexes(offset, limit)
 	var cur_limit;
 	var indexes = {};
 
-	if (offset!==undefined)
-		cur_offset = (+offset || 0);
-	else
-		cur_offset = defaultOffset;
-
-	if (limit!==undefined)
-		cur_limit = (+limit || 0);
-	else
-		cur_limit = defaultLimit;
+	cur_offset = (offset!==undefined) ? (+offset || 0) : defaultOffset;
+	cur_limit = (limit!==undefined)? (+limit || 0) : defaultLimit;
 
 	indexes['startIndex'] = cur_offset;
 	indexes['finishIndex'] = cur_offset + cur_limit;
